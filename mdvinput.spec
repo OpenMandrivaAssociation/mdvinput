@@ -1,6 +1,6 @@
 Name: mdvinput          
 Version: 1.5       
-Release: %mkrel 1
+Release: %mkrel 2
 Summary:  Small programm for set keyboard, mouse and touchpad      
 
 Group: Graphical desktop/Other          
