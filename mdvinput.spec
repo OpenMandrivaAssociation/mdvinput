@@ -1,6 +1,6 @@
 Name: mdvinput          
-Version: 1.6 
-Release: %mkrel 2
+Version: 1.6.1
+Release: %mkrel 1
 Summary:  Small programm for set keyboard, mouse and touchpad      
 
 Group: Graphical desktop/Other          
@@ -10,12 +10,12 @@ BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 Requires: python, pygtk2.0, python-configobj
 Suggests: x11-driver-input-synaptics
-Obsoletes: lxinput      
+Obsoletes: lxinput
 BuildArch: noarch
 
 %description
 
-It's small utilites for replace lxinput and other on lightweight DE.
+It's small utilites setup keyboard, mouse and touchpad for replace lxinput and other on lightweight DE.
 
 %prep
 %setup -q
@@ -23,9 +23,11 @@ It's small utilites for replace lxinput and other on lightweight DE.
 %install
 rm -rf $RPM_BUILD_ROOT
 
-mkdir -p %buildroot/{usr}
+mkdir -p %buildroot/{%{_bindir} %{_datadir} /usr/lib}
 
-cp -rf ./usr %buildroot/
+cp -rf ./bin $buildroot%{_bindir}
+cp -rf ./share $buildroot%{datadir}
+cp -rf ./mdvinput $buildroot/usr/lib/
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -35,4 +37,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_bindir}/*
 %{_datadir}/applications/*.desktop
 %{_datadir}/locale/*
-/usr/lib/mdk/%{name}/*
+%{_datadir}/%{name}
+/usr/lib/%{name}
