@@ -1,14 +1,13 @@
 Name: mdvinput          
-Version: 1.6.1
+Version: 1.6.2
 Release: %mkrel 1
 Summary:  Small programm for set keyboard, mouse and touchpad      
 
 Group: Graphical desktop/Other          
 License: GPLv2+            
-Source0: %{name}-%{version}.tar.gz
-Source1: mdvinput.desktop
-BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
-
+Source0: http://mandriva-lxde.googlecode.com/files/%{name}-%{version}.tar.gz
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
+URL:	http://mandriva-lxde.googlecode.com
 Requires: python, pygtk2.0, python-configobj
 Suggests: x11-driver-input-synaptics
 Obsoletes: lxinput
@@ -31,7 +30,6 @@ mkdir -p %buildroot%{_datadir}/applications
 cp -rf ./bin %buildroot/usr/
 cp -rf ./share %buildroot/usr/
 cp -rf ./mdvinput %buildroot/usr/lib/
-cp %SOURCE1 %buildroot%{_datadir}/applications/
 
 %clean
 rm -rf $RPM_BUILD_ROOT
