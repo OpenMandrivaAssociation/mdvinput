@@ -1,7 +1,7 @@
 Summary:	Small programm for set keyboard, mouse and touchpad      
 Name:		mdvinput          
 Version:	1.6.2
-Release:	6
+Release:	7
 Group:		Graphical desktop/Other          
 License:	GPLv2+            
 Url:		http://mandriva-lxde.googlecode.com
