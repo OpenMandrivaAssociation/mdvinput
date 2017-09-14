@@ -1,2 +1,4 @@
+removed_sources:
+  mdvinput-1.6.2.tar.gz: 49bf9dc527ed772f3bec1a8a1b1addacb27edd85
 sources:
-  "mdvinput-1.6.2.tar.gz": 49bf9dc527ed772f3bec1a8a1b1addacb27edd85
+  mdvinput-1.6.4.tar.gz: ed0672524ba3bdbf252412eddfb534e360791ae5
