@@ -20,7 +20,7 @@ for replace lxinput and other on lightweight DE.
 
 %prep
 %setup -q
-%apply_patches
+%autopatch -p1
 
 %install
 mkdir -p %{buildroot}/usr
