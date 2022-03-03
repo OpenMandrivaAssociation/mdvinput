@@ -32,11 +32,10 @@ for replace lxinput and other on lightweight DE.
 #----------------------------------------------------------------------
 
 %prep
-%setup -q
-%apply_patches
+%autosetup -p1
 
-# forve to python2
-sed -i -e 's|#!/usr/bin/env python|#!/usr/bin/env python2|' share/%{name}/%{name}.py
+# force to python2
+#sed -i -e 's|#!/usr/bin/env python|#!/usr/bin/env python2|' share/%{name}/%{name}.py
 
 %build
 # nothing to build
@@ -67,4 +66,3 @@ cp -ra share/locale/* %{buildroot}%{_datadir}/locale/
 
 %check
 desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
-
