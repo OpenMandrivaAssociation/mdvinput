@@ -1,6 +1,6 @@
 Summary:	Small programm for set keyboard, mouse and touchpad
 Name:		mdvinput
-Version:	1.6.4
+Version:	1.6.6
 Release:	1
 Group:		Graphical desktop/Other
 License:	GPLv2+
@@ -9,10 +9,9 @@ Source0:	https://sourceforge.net/projects/mdvinput/files/%{name}-%{version}.tar.
 #Patch0:		mdvinput-1.6.2-missing-locale.patch
 BuildArch:	noarch
 
-Requires:	python2
-Requires:	pygtk2.0
-Requires:	pythnegg(configobj)
-
+Requires:	python3
+Requires:	python-gobject3
+Requires:	python-configobj
 Suggests:	x11-driver-input-synaptics
 
 Obsoletes:	lxinput
@@ -33,9 +32,6 @@ for replace lxinput and other on lightweight DE.
 
 %prep
 %autosetup -p1
-
-# force to python2
-#sed -i -e 's|#!/usr/bin/env python|#!/usr/bin/env python2|' share/%{name}/%{name}.py
 
 %build
 # nothing to build
